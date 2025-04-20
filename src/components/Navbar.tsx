@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import book from '@/assets/book.png'
+import book from '../../public/book.png'
 import Image from 'next/image'
 
 const Navbar = () => {
