@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const BookCard = ({book}:{book:Book}) => {
   return (
-    <div className=' w-[390px] bg-white border-1 border-zinc-400/60 items-center px-5 py-4 rounded-sm shadow-xl'>
+    <div className=' w-[390px] bg-white border-1 border-zinc-400/60 items-center px-5 py-4 rounded-sm shadow-xl hover:scale-110 hover:transition-all'>
         
         <div className='flex gap-5'>
             <div >
