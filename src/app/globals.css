@@ -7,10 +7,16 @@
     --color-primary-100:#f7eadd;
     --color-primary-600:#bf5a36;
     --color-primary-700:#9f462f;
+    --color-primary-800:#803a2c;
+    --color-primary-900:#683226;
+    --color-primary-950:#381712;
 
     
 }
 
+/* body{
+    background-color: #2a2a2a;
+} */
 
 
 
