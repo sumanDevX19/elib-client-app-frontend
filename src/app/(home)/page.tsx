@@ -1,17 +1,17 @@
 import Banner from "@/app/(home)/components/Banner";
 import Booklist from "../(home)/components/Booklist";
+import { Suspense } from "react";
+// import LoaderComponent from "../book/[bookid]/components/LoaderComponent";
+// import { SkeletonCard } from "@/components/ui/SkeletonCard";
+import Loader from "./components/Loader";
+
 
 
 
 
 export default async function Home() {
 
-  const booksResponse = await fetch(`${process.env.BACKEND_URL}/books/`)
-  if(!booksResponse){
-    throw new Error('An Error Occurred While Fetching Books')
-  }
-
-  const books = await booksResponse.json()
+  
 
   
   
@@ -21,7 +21,9 @@ export default async function Home() {
   return (
     <>
     <Banner/>
-    <Booklist books={books}/>
+    <Suspense fallback={<Loader/>}>
+      <Booklist/>
+    </Suspense>
     
     
     
