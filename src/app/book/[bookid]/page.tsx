@@ -4,10 +4,13 @@ import React from 'react'
 import Image from 'next/image'
 import DownloadButton from './components/DownloadButton';
 
-const SingleBookPage = async ({params}:{params:{bookid:string}}) => {
+
+const SingleBookPage = async ({params}:{params:Promise<{ bookid: string }>}) => {
     let book: Book | null = null
     try{
-        const response = await fetch(`${process.env.BACKEND_URL}/books/${params.bookid}`)
+        const {bookid} = await params
+        
+        const response = await fetch(`${process.env.BACKEND_URL}/books/${bookid}`)
 
         if(!response){
             throw new Error("No Response Recived")

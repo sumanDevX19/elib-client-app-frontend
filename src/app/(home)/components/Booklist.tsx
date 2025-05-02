@@ -3,7 +3,11 @@ import BookCard from './BookCard';
 import { Book } from '@/types';
 
 const Booklist = async () => {
-  const booksResponse = await fetch(`${process.env.BACKEND_URL}/books/`,{ cache:'no-store'})
+  const booksResponse = await fetch(`${process.env.BACKEND_URL}/books/`,{
+    next:{
+      revalidate:3600
+    }
+  })
   if(!booksResponse){
     throw new Error('An Error Occurred While Fetching Books')
   }
